@@ -1,0 +1,54 @@
+{
+  "pages": [
+    
+    "pages/index/index",
+    "pages/product/product",
+    "pages/service/service",
+    "pages/ours/ours"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "首页",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#CBC9C4",
+    "selectedColor": "#DEBF76",
+    "backgroundColor": "#ffffff",
+    "list": [
+    {
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/sy-1.png",
+      "selectedIconPath": "images/sy-2.png"
+    },
+    {
+      "pagePath": "pages/product/product",
+      "text": "产品中心",
+      "iconPath": "images/cp-1.png",
+      "selectedIconPath": "images/cp-2.png" 
+    },
+    {
+      "pagePath": "pages/service/service",
+      "text": "服务中心",
+      "iconPath": "images/fw-1.png",
+      "selectedIconPath": "images/fw-2.png"
+    },
+    {
+      "pagePath": "pages/ours/ours",
+      "text": "关于我们",
+      "iconPath": "images/wm-1.png",
+      "selectedIconPath": "images/wm-2.png"
+    }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

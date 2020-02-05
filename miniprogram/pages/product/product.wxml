@@ -1,0 +1,33 @@
+<!--pages/product/product.wxml-->
+<view class="pt10">
+  <view class="proBox">
+    <view class="flex-fs pro-box">
+      <view class="proRight">
+        <image class="product-img" src="../../images/cp-1.png"></image>
+      </view>
+      <view class="flex pl10">
+        <text class="flex pro-title">SG Louis</text>
+        <view class="flex-fs pb10">
+          <text class="color-9 f12"><icon></icon>123</text>
+          <text class="color-9 f12 pl10"><icon></icon>123</text>
+        </view>
+        <view class="color-9 f12">2020-01-02</view> 
+      </view>
+    </view>
+    
+     <view class="flex-fs pro-box">
+      <view class="proRight">
+        <image class="product-img" src="../../images/cp-1.png"></image>
+      </view>
+      <view class="flex pl10">
+        <text class="flex pro-title">SG Louis</text>
+        <view class="flex-fs pb10">
+          <text class="color-9 f12"><icon></icon>123</text>
+          <text class="color-9 f12 pl10"><icon></icon>123</text>
+        </view>
+        <view class="color-9 f12">2020-01-02</view> 
+      </view>
+    </view>
+  </view>
+</view>
+

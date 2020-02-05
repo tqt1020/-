@@ -1,0 +1,342 @@
+/**index.wxss**/
+/* 轮播 */
+page { 
+  background: #f6f6f6;
+  -background-color:yellowgreen;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.carousel{
+  width: 90%;
+  border-radius: 20rpx;
+  margin: auto;
+  margin-top: 40rpx;
+  background-color: #333;
+}
+.carousel_swiper{
+  width: 100%;
+  height: 350rpx;
+  display: block;
+  position: relative;
+  -background: #f4f4f4;
+}
+.carouselImg{
+  width: 100%;
+  height: inherit;
+}
+
+/* two */
+.titlePic{
+  width: 90%;
+  margin: auto;
+  margin-top:40rpx;
+  -background: aqua;
+  -height: 200rpx;
+}
+.title-pic{
+  display: flex;
+  justify-content: space-between;
+}
+.flex-item{
+  width: 110rpx;
+  height: 100rpx;
+  margin: 10rpx;
+  background: yellow;
+  border-radius: 50rpx;
+}
+.titleTxt{
+  width: 100%;
+  margin: auto;
+  -margin-top: 5rpx;
+}
+.titleTxt text{
+  font-size: 24rpx;
+  color: #333333;
+  margin: 15rpx;
+  align-content: center;
+}
+.titleMore{
+  width: 120rpx;
+  margin: auto;
+  margin-top: 20rpx;
+  background: #DEBF76;
+  height: 40rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+  color:#fff;
+  text-align: center;
+}
+
+/* three */
+.bgBox{
+  width: 100%;
+  height: 370rpx;
+  background: #333;
+  margin-top: 40rpx;
+}
+/* four */
+.achievement{
+  margin:  auto;
+  margin-top: 20rpx;
+  width: 100%rpx;
+  text-align: center;
+}
+.achievement1{
+  margin: 10rpx auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+}
+.textBox{
+  width: 100%;
+  margin: auto;
+  margin-top: 20rpx;
+  background: #fff;
+  
+}
+.textitem{
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 20rpx auto;
+  font-size: 26rpx;
+}
+.textRt{
+  background:#DEBF76;
+  color: #fff;
+  padding: 10rpx 10rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+}
+.texttfl{
+  padding: 10rpx 20rpx;
+  line-height: 30rpx;
+}
+.jishuBox{
+  width: 100%;
+  margin-top: 20rpx;
+  -height: 300rpx;
+  background: #fff;
+}
+.yuanBox{
+  width: 90%;
+  margin: auto;
+  background: yellowgreen;
+  height: 500rpx;
+}
+.shengbiBox{
+  width: 100%;
+  margin-top: 20rpx;
+  height: 300rpx;
+  background:#fff;
+}
+.shengbiText{
+  -width: 90%;
+  height: 100rpx;
+  margin:10rpx auto;
+  padding:  0 20px;
+}
+/* 里程碑 */
+.licBox{
+  margin: 20rpx auto;
+  background: #fff;
+  padding: 0 20px 10px;
+}
+
+
+.licText{
+  margin: auto;
+  color: #666;
+}
+.licText text{
+  padding-left:50rpx;
+  font-size:24rpx;
+}
+
+
+
+/* 时间轴 */
+.expressRecordBox{
+  background: aqua;
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.expressRecord-single-close {
+  height: 122rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.expressRecord-single-noReach-online-top-close {
+  display: flex;
+  flex-direction: column; 
+}
+
+.online-top-closing {
+  width: 1rpx;
+  height: 50rpx;
+  background: #F4A720;
+  margin-left: 95rpx;
+}
+
+.online-top-close {
+  width: 1rpx;
+  height: 50rpx;
+  background: #F4A720;
+  margin-left: 95rpx;
+}
+
+.dot-closing {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  margin-left: 90rpx;
+  margin-top: 6rpx;
+  margin-bottom: 6rpx;
+  background: #F4A720;
+}
+
+.dot-close {
+  width: 10rpx;
+  height: 10rpx;
+  border-radius: 50%;
+  margin-left: 90rpx;
+  margin-top: 6rpx;
+  margin-bottom: 6rpx;
+  background: #999;
+}
+
+.online-bottom {
+  width: 1rpx;
+  height: 50rpx;
+  background: #F4A720;
+  margin-left: 95rpx;
+}
+
+.online-bottom-start {
+  width: 1rpx;
+  height: 50rpx;
+  /* background: #999; */
+  margin-left: 95rpx;
+}
+
+.expressRecord-text {
+  margin-left: 30rpx;
+}
+
+.expressRecord-statusing {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.expressRecord-status-addressing {
+  font-size: 22rpx;
+  color: #333;
+}
+
+
+.expressRecord-status {
+  font-size: 26rpx;
+  color: #999;
+}
+
+.expressRecord-status-address {
+  font-size: 22rpx;
+  color: #999;
+}
+
+.expressRecord-dating {
+  position: absolute;
+  height: 100%;
+  /* top: 0;
+  bottom: 0; */
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #333;
+}
+
+.expressRecord-date {
+  position: absolute;
+  height: 100%;
+  /* top: 0;
+  bottom: 0; */
+  left: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #999;
+}
+
+.expressRecord-date-text {
+  font-size: 24rpx;
+}
+
+
+/* 选项卡 */
+.xinwenBox{
+  background: #fff;
+  padding: 20px;
+  width: 90%;
+}
+.record-item {
+  margin-top: 10rpx;
+  background-color: white;
+  padding-bottom: 5rpx;
+  padding-top: 5rpx;
+  font-size: 30rpx;
+}
+ 
+.name{
+  display: flex;
+  justify-content: center;
+  padding: 20rpx 10rpx;
+}
+.name-Box{
+  width: 100%;
+}
+.nameText{
+
+}
+.namePic{
+  background: yellowgreen;
+  -display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.picBox{
+  width: 300rpx;
+  height: 300rpx;
+  background: aqua;
+}
+.newsBox{
+  width: 100%;
+  height: 200rpx;
+  margin: auto;
+  background: #fff;
+}
+.proBox{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.proRight{
+  width: 224rpx;
+  height: 132rpx;
+  border-radius: 10rpx;
+}

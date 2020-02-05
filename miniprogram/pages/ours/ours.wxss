@@ -1,0 +1,163 @@
+/* pages/ours/ours.wxss */
+page{
+  background: #f6f6f6;
+}
+.xinwenBox{
+  -background: #fff;
+
+}
+
+.bgBox{
+  -width: 100%;
+  margin-top: 40rpx;
+  background: aqua;
+}
+.img{
+  height: 150px;
+  width: 100%;
+}
+.product-img{
+  -height:370rpx;
+}
+
+.p12{
+  padding: 12px;
+}
+/* 主要成就 */
+.textBox{
+  width: 100%;
+  margin: auto;
+  margin-top: 20rpx;
+  background: #fff;
+}
+.achievement{
+  margin:  auto;
+  margin-top: 20rpx;
+  width: 100%rpx;
+  text-align: center;
+}
+.achievement1{
+  margin: 10rpx auto;
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+}
+.textBox{
+  width: 100%;
+  margin: auto;
+  margin-top: 20rpx;
+  background: #fff;
+  
+}
+.textitem{
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 20rpx auto;
+  font-size: 26rpx;
+}
+.textRt{
+  background:#DEBF76;
+  color: #fff;
+  padding: 10rpx 10rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  border-radius: 5rpx;
+}
+.texttfl{
+  padding: 10rpx 20rpx;
+  line-height: 30rpx;
+}
+/* 技术创新 */
+.jishuBox{
+  width: 100%;
+  margin-top: 20rpx;
+  -height: 300rpx;
+  background: #fff;
+ 
+}
+.yuanBox{
+  width: 90%;
+  margin: auto;
+  background: yellowgreen;
+  height: 100rpx;
+}
+/* 在中国 */
+.shengbiBox{
+  width: 100%;
+  margin-top: 20rpx;
+  height: 300rpx;
+  background:#fff;
+}
+.shengbiText{
+  -width: 90%;
+  height: 100rpx;
+  margin:10rpx auto;
+  padding:  0 20px;
+}
+/* 里程碑 */
+.licBox{
+  margin: 20rpx auto;
+  background: #fff;
+  padding: 0 20px 10px;
+}
+.licText{
+  margin: auto;
+  color: #666;
+}
+.licText text{
+  padding-left:50rpx;
+  font-size:24rpx;
+}
+
+/* 案例欣赏 */
+page{
+  background: #f6f6f6;
+}
+.proBox{
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 40rpx;
+}
+.proRight{
+  width: 224rpx;
+  height: 132rpx;
+  border-radius: 10rpx;
+}
+
+/* 联系我们 */
+page{
+  background:  #f6f6f6;
+}
+/* 地图 */
+.map_container{
+  width: 100%;
+  height: 300rpx;
+  margin-top: 40rpx;
+}
+.map {
+  height: 100%;
+  width: 100%;
+}
+/* 表单 */
+.formBox{
+  margin: 40rpx auto;
+  width: 90%;
+  border: 1rpx solid #D7D5D1;
+  border-radius: 10rpx;
+  
+}
+.form-flex{
+  display: flex;
+  padding: 20rpx 10rpx;
+}
+.btn-tijiao{
+  width: 90% !important;
+  background: #DEBF76;
+  border-radius: 40rpx;
+  color: #fff;
+  font-size: 30rpx;
+  
+}

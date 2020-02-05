@@ -1,0 +1,220 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 轮播 -->
+  <view class='carousel'> 
+  <swiper class='carousel_swiper' indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8" autoplay="true" interval='2000' circular='true'>
+    <block wx:for="{{carouselList}}" wx:key="key">
+      <swiper-item bindtap='chomeCarouselClick' data-url='{{item.url}}'>
+        <image class="carouselImg" src='{{host}}{{item.img}}' mode='aspectFill' ></image>
+      </swiper-item>
+    </block>
+  </swiper>
+ </view>
+ 
+ <!-- two -->
+<view class="titlePic">
+  <view class="title-pic">
+    <view class="flex-item"></view>
+    <view class="flex-item"></view>
+    <view class="flex-item"></view>
+    <view class="flex-item"></view>
+    <view class="flex-item"></view>
+  </view>
+  <view class='titleTxt'>
+    <text>SG Louis</text>
+    <text>SG Mat</text>
+    <text>SGP Louis</text>
+    <text>SGP Colbert</text>
+    <text>SGP Mat</text>
+  </view> 
+  <view class="titleMore">
+    <text>更多>></text>
+  </view>
+</view>
+
+<!-- three -->
+<view class="bgBox"></view>
+
+<!-- four -->
+<view class="textBox">
+  <view class="achievement">
+    <text>主要成就</text>
+  </view>
+  <view class="achievement1">
+    <text>Major Achievements</text>
+  </view>
+  <view class="textitem">
+    <view class="textRt">01</view>
+    <view class="texttfl">汽车安全玻璃：<text style="color:#DEBF76">欧洲50%轿车欧洲排名第一</text></view>
+  </view>
+  <view class="textitem">
+    <view class="textRt">02</view>
+    <view class="texttfl">法国卢浮宫前金字塔：<text style="color:#DEBF76">共660块形状各异的玻璃</text></view>
+  </view>
+  <view class="textitem">
+    <view class="textRt">03</view>
+    <view class="texttfl">房屋隔音保护材料：<text style="color:#DEBF76;">欧洲1/3,美国1/5</text></view>
+  </view>
+  <view class="textitem">
+    <view class="textRt">04</view>
+    <view class="texttfl">饮配水管道系统：<text style="color:#DEBF76">全球80多个首都,1000多个城市</text></view>
+  </view>
+  <view class="textitem">
+    <view class="textRt">05</view>
+    <view class="texttfl">航空配件：<text style="color:#DEBF76">航飞机雷达罩, 驾驶舱玻璃 ,乘客舱玻璃</text></view>
+  </view>
+</view>
+<!-- 技术创新 -->
+<view class="jishuBox">
+  <view class="achievement"><text>技术创新</text></view>
+  <view class="achievement1"><text>Technological Innovation</text></view>
+  <view class="yuanBox"></view>
+</view>
+<!-- 在中国 -->
+<view class="shengbiBox">
+  <view class="achievement"><text>圣戈班在中国</text></view>
+  <view class="achievement1"><text>Saint-Gobain in chaina</text></view>
+  <view class="shengbiText">
+    <text style="padding-left:40rpx;color:#000;">圣戈班集团</text>
+    <text style="font-size:24rpx;color:#333;">自1985年进入中国市场,至今在华已设立1家研发中心和40多家企业及公司,涉及汽车玻璃,建筑玻璃,以及磨料工具,陶瓷是大法师打发斯蒂芬</text>
+  </view>
+</view> 
+<!-- 里程碑 -->
+<view class="licBox">
+  <view class="achievement"><text>里程碑</text></view>
+  <view class="achievement1"><text>Milestones</text></view>
+  <view class="licText">
+    <text style="">在过去四十多年里，舒热佳（Solar Gard），畅销全球90多个国家和地区，在全球拥有20多个分销中心，5000多家安装商覆盖60多个国家和地区。</text>
+  </view>
+  <view class="lcb-time">
+    <view class="flex-fs">
+      <view class="lcb-sjx">
+        <view class="lcb-con"><text></text></view>
+        1977年全球率先采用磁控溅射
+技术商业化生产窗膜 全球主要
+的磁控溅射窗膜生产商之一
+        <view class="lcb-line"></view>
+      </view>
+      <view></view>
+    </view>
+     <view class="flex-fd">
+        <view></view>
+        <view class="lcb-right">
+          <view class="lcb-con"><text></text></view>
+        1984年全球率先采用磁控溅
+  射技术商业化生产钛金窗膜
+          <view class="lcb-line"></view>
+        </view>
+     </view>
+      <!--  -->
+      <view class="flex-fs">
+        <view class="lcb-sjx">
+            <view class="lcb-con"><text></text></view>
+            1985年全球率先产出幅宽达
+    1540mm的磁控溅射窗膜 被国
+    际窗膜协会IWFA认可的全球八
+    家窗膜生产商之一
+            <view class="lcb-line"></view>
+          </view>
+           <view></view>
+      </view>
+      <view class="flex-fd">
+        <view></view>
+        <view class="lcb-right">
+          <view class="lcb-con"><text></text></view>
+        1997年开发行业高科技水平的
+  高隔热，高透光的光谱选择性
+  创模
+          <view class="lcb-line"></view>
+        </view>
+      </view>
+       <view class="flex-fs">
+          <view class="lcb-sjx">
+            <view class="lcb-con"><text></text></view>
+            2004年进入中国市场
+            <view class="lcb-line"></view>
+          </view>
+          <view></view>
+      </view>   
+  </view>   
+</view>
+<!-- 选项卡 -->
+  <view class="xinwenBox">
+      <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
+        scroll-top="{{scrollTop}}">
+        <!--Tab布局-->
+        <view class='title'>
+          <view class="title-sel {{0 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='0'>
+            <text>圣戈班</text>
+          </view>
+          
+          <view class="title-sel {{1 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='1'>
+            <text>上海索罗盖德</text>
+          </view>
+          <view class="title-sel {{2 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='2'>
+            <text>新闻中心</text>
+          </view>
+        </view>
+      </scroll-view>
+      <!--内容布局-->
+        <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+          <swiper-item class='swiper'>
+          <view class='name'>
+            <view class="name-Box">
+              <view class="achievement"><text>圣戈班在中国</text></view>
+              <view class="achievement1"><text>Saint-Gobain in chaina</text></view>
+              <view class="nameText">
+                <text style="padding-left:40rpx;color:#000;">圣戈班集团</text>
+                <text style="font-size:24rpx;color:#333;">自1985年进入中国市场,至今在华已设立1家研发中心和40多家企业及公司,涉及汽车玻璃,建筑玻璃,以及磨料工具,陶瓷是大法师打发斯蒂芬</text>
+              </view>
+            </view>
+          </view>
+          <view wx:for="{{firstList}}" wx:for-item="item" class='record-item'>
+            <view class='name'>
+              1
+            </view>
+          </view>
+          </swiper-item>
+          <swiper-item class='swiper' class='swiper'>
+            <view class='name'>
+              <view class="name-Box">
+                <view class="achievement"><text>关于上海索洛盖德</text></view>
+                <view class="achievement1"><text>SAbout sologaid in Shanghai</text></view>
+                <view class="namePic">
+                  
+                </view>
+              </view>
+            </view>
+            <view wx:for="{{secondList}}" wx:for-item="item" class='record-item'>
+              <view class='name'>
+                
+              </view>
+            </view>
+          </swiper-item>
+          <swiper-item class='swiper' class='swiper'>
+          <view class='name'>
+            <view class="newsBox">
+               <view class="flex-fs pro-box">
+                  <view class="proRight">
+                    <image class="product-img" src="../../images/cp-1.png"></image>
+                  </view>
+                  <view class="flex pl10">
+                    <text class="flex pro-title">SG Louis</text>
+                    <view class="flex-fs pb10">
+                      <text class="color-9 f12"><icon></icon>123</text>
+                      <text class="color-9 f12 pl10"><icon></icon>123</text>
+                    </view>
+                  <view class="color-9 f12">2020-01-02</view> 
+                </view>
+              </view>
+            </view>
+          </view>
+          <view wx:for="{{thirdList}}" wx:for-item="item" class='record-item'>
+          <view class='name'>
+           
+          </view>
+          </view>
+        </swiper-item>
+      </swiper>
+  </view>
+</view>
