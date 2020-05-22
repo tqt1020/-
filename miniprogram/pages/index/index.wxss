@@ -2,24 +2,24 @@
 /* 轮播 */
 page { 
   background: #f6f6f6;
-  -background-color:yellowgreen;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 .carousel{
-  width: 90%;
-  border-radius: 20rpx;
+  width: 100%;
   margin: auto;
-  margin-top: 40rpx;
-  background-color: #333;
+  padding: 40rpx 0;
+  background: #fff;
 }
 .carousel_swiper{
-  width: 100%;
+  width: 90%;
+  margin: auto;
   height: 350rpx;
   display: block;
   position: relative;
   -background: #f4f4f4;
+  border-radius: 20rpx;
 }
 .carouselImg{
   width: 100%;
@@ -28,25 +28,36 @@ page {
 
 /* two */
 .titlePic{
-  width: 90%;
+  -width: 90%;
   margin: auto;
-  margin-top:40rpx;
-  -background: aqua;
-  -height: 200rpx;
+  -margin-top:40rpx;
+  background: #fff;
+  
 }
 .title-pic{
+  width: 90%;
+  margin: auto;
   display: flex;
   justify-content: space-between;
 }
 .flex-item{
   width: 110rpx;
-  height: 100rpx;
-  margin: 10rpx;
-  background: yellow;
-  border-radius: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.product-img{
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+.productText{
+  font-size: 10px;
+  color: #333333;
 }
 .titleTxt{
-  width: 100%;
+  width: 90%;
   margin: auto;
   -margin-top: 5rpx;
 }
@@ -55,64 +66,82 @@ page {
   color: #333333;
   margin: 15rpx;
   align-content: center;
+  
 }
 .titleMore{
-  width: 120rpx;
-  margin: auto;
-  margin-top: 20rpx;
+  padding: 40rpx 0;
+}
+.titleMore view{
+  width: 124rpx;
   background: #DEBF76;
   height: 40rpx;
   border-radius: 20rpx;
   font-size: 24rpx;
   color:#fff;
   text-align: center;
-}
+  margin: auto;
+  line-height: 40rpx;
 
+}
+.news-img{
+  width: 112px;
+  height: 64px;
+  border-radius: 4rpx;
+}
 /* three */
 .bgBox{
   width: 100%;
-  height: 370rpx;
-  background: #333;
-  margin-top: 40rpx;
+  padding-bottom: 20px;
+  margin-top: 15rpx; 
 }
+
 /* four */
 .achievement{
-  margin:  auto;
-  margin-top: 20rpx;
-  width: 100%rpx;
+  display: flex;
   text-align: center;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px 20px 5px 20px;
+}
+.iconImg{
+  width: 40rpx;
+  height: 40rpx;  
+}
+.achievement text{
+  display: inline-block;
+  padding: 0 40rpx;
 }
 .achievement1{
-  margin: 10rpx auto;
   text-align: center;
   font-size: 24rpx;
   color: #999999;
+  
 }
 .textBox{
-  width: 100%;
   margin: auto;
   margin-top: 20rpx;
   background: #fff;
-  
+  padding: 0 20px 20px 20px;
 }
 .textitem{
-  width: 90%;
   display: flex;
   justify-content: flex-start;
-  margin: 20rpx auto;
+  padding: 10px 0;
   font-size: 26rpx;
+  align-items: center;
+  width: 100%;
 }
 .textRt{
   background:#DEBF76;
   color: #fff;
   padding: 10rpx 10rpx;
-  height: 30rpx;
-  line-height: 30rpx;
   border-radius: 5rpx;
 }
 .texttfl{
-  padding: 10rpx 20rpx;
+  padding: 0 20rpx;
   line-height: 30rpx;
+  flex: 1;
+  font-size: 13px;
 }
 .jishuBox{
   width: 100%;
@@ -120,12 +149,69 @@ page {
   -height: 300rpx;
   background: #fff;
 }
+/* 园 */
 .yuanBox{
   width: 90%;
   margin: auto;
-  background: yellowgreen;
-  height: 500rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
+.yuan-fr{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.yuan-ft{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+   padding: 20rpx;
+}
+.fr-right{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 40rpx;
+  border-radius: 50%;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+}
+.fr-left{
+  width: 200rpx;
+  height: 200rpx;
+  margin-top: 40rpx;
+  border-radius: 50%;
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;align-items: center;
+}
+.f11{
+  background: #FC7D74;
+}
+.f121{
+  background: #93F4BF;
+}
+.f13{
+  background: #FFE7A5;
+  margin-top: 120rpx;
+}
+.f14{
+  background: #9EDDF4;
+}
+.fr-text{
+  color:#333333 ;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 25px;
+}
+
+/*在中国  */
 .shengbiBox{
   width: 100%;
   margin-top: 20rpx;
@@ -133,10 +219,14 @@ page {
   background:#fff;
 }
 .shengbiText{
-  -width: 90%;
-  height: 100rpx;
   margin:10rpx auto;
   padding:  0 20px;
+}
+.teamText{
+  font-size: 12px;
+  color: #fff;
+  text-indent: 20px;
+  padding-top: 5px;
 }
 /* 里程碑 */
 .licBox{
@@ -155,11 +245,14 @@ page {
   font-size:24rpx;
 }
 
-
+.company-img{
+  width: 125px;
+  height: 120px;
+}
 
 /* 时间轴 */
 .expressRecordBox{
-  background: aqua;
+  -background: aqua;
   overflow: hidden; 
   display: flex;
   justify-content: center;
@@ -290,6 +383,7 @@ page {
   background: #fff;
   padding: 20px;
   width: 90%;
+  height: 230px
 }
 .record-item {
   margin-top: 10rpx;
@@ -310,13 +404,20 @@ page {
 .nameText{
 
 }
+/* 关于 */
 .namePic{
-  background: yellowgreen;
-  -display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
+  padding: 20rpx 0;
 }
+
+.Pic-text{
+  color: #999;
+  font-size: 24rpx;
+}
+
+
 .picBox{
   width: 300rpx;
   height: 300rpx;
@@ -324,8 +425,7 @@ page {
 }
 .newsBox{
   width: 100%;
-  height: 200rpx;
-  margin: auto;
+  -margin: 40rpx auto;
   background: #fff;
 }
 .proBox{

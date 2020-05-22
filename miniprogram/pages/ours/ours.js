@@ -1,4 +1,8 @@
 // pages/ours/ours.js
+const ajax = require('../../utils/ajax.js');
+var page = 1;//默认第一页
+var sectionData = [];
+var ifLoadMore = null;
 Page({
 
   /**
@@ -7,7 +11,10 @@ Page({
   data: {
     currentIndex: 0,
     height:400,
-    currentTab:0
+    currentTab:0,
+    username: '',
+    usertel: '',
+    message: ''
   },
   //swiper切换时会调用
   swiperChange: function (e) {
@@ -34,7 +41,55 @@ Page({
     console.log(username);
     var usertel = e.detail.value.usertel;
     console.log(usertel);
-   
+    var message = e.detail.value.message
+    if (username == ''){
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none',
+      })
+      return
+    }
+    if (usertel == '') {
+      wx.showToast({
+        title: '请输入电话',
+        icon: 'none',
+      })
+      return
+    }
+     else {
+     var reg = /^[1][3,4,5,7,8,9][0-9]{9}$/;
+      if (!reg.test(usertel)) {
+        wx.showToast({
+          title: '请输入电话',
+        })
+        return
+      }  
+    }
+    var dataParams = {
+      address:'',
+      phone: usertel,
+      leaveWord: message,
+      name: username
+    }
+    console.log(dataParams)
+    ajax.request({
+      method: 'POST',
+      url: "/api/ContactUs/addContactUs",
+      data: JSON.stringify(dataParams),
+      success: res => {
+        wx.showToast({
+          title: '提交成功'
+        })
+        that.setData({
+          username: '',
+          usertel: '',
+          message: ''
+        },3000)
+      }, fail: function (res) {
+        wx.hideLoading()
+        console.log(res)
+      }
+    })
   },
   // 获取当前手机信息
     setCanvasSize()  {

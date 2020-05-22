@@ -5,7 +5,7 @@
           <view class="title-sel {{0 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='0'>
             <text>价格查询</text>
           </view>
-          <view class="title-sel {{2 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='2'>
+          <view class="title-sel {{1 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='1'>
             <text>质保查询</text>
           </view>
         </view>
@@ -15,64 +15,142 @@
       <!--内容布局-->
         <swiper class='swiper' duration="200"  bindchange='pagechange' current='{{currentIndex}}' style='height:{{height}}px'>
           <swiper-item class='swiper'>
-            <scroll-view scroll-y style='height:{{height-54}}px'>
-              <view class="box">
+          <view class="box">
                 <view class="jiageBox">
-                  <view class="com-sTxt" bindtap='selectToggle'>
-                    <text>请选择体系</text>
-                    
+                  <view class="com-sTxt" bindtap='sortFolderFun'>
+                    <view class="flex-sb text-over">
+                      <text class="flex text-over f12">{{txName}}</text>
+                      <view class="icon-three"></view>
+                    </view>    
                   </view>
                   <view class="com-sTxt">
-                    <text>请选择体系</text>
+                    <view class="flex-sb text-over" bindtap='sortPpFun'>
+                      <text class="flex text-over">{{ppName}}</text>
+                      <view class="icon-three"></view>
+                    </view>  
                   </view>
                    <view class="com-sTxt">
-                    <text>请选择体系</text>
+                    <view class="flex-sb text-over" bindtap='sortTypeFun'>
+                      <text class="flex text-over">{{carTypeName}}</text>
+                      <view class="icon-three"></view>
+                    </view>  
                   </view>
                 </view>
-                <button class="btn-tijiao" formType="submit">查询</button>
-              </view>    
+                <button class="btn-tijiao" bindtap="submitSearchFun">查询</button>
+              </view>  
+            <scroll-view scroll-y style='height:{{height-127}}px'>
+                
                 <!--  -->
-                <view class="pt10">
-                  <view class="proBox">
-                    <view class="flex-fs pro-box1">
-                      <view class="proRight">
-                        <image class="product-img" src="../../images/cp-1.png"></image>
-                      </view>
-                      <view class="flex pl10">
-                        <text class="flex pro-title">SG Louis</text>
-                        <view class="flex-fs pb10">
-                          <text class="color-9 f12"><icon></icon></text>
-                          <text class="color-9 f12 pl10"><icon></icon></text>
-                        </view>
-                      <view class="color-9 f12">￥188元</view> 
-                    </view>
+                <view class="proBox" wx:if="{{showData}}">
+                  <view class="proBox-con">
+                    <view class="pr10">体系</view>
+                    <view class="flex">{{searchList&&searchList.tiXi}}</view>
                   </view>
+                  <view class="proBox-con">
+                    <view class="pr10">品牌</view>
+                    <view class="flex">{{searchList&&searchList.pinPai}}</view>
+                  </view>
+                  <view class="proBox-con">
+                    <view class="pr10">车型</view>
+                    <view class="flex">{{searchList&&searchList.cheXing}}</view>
+                  </view>
+                  <view class="proBox-con">
+                    <view class="pr10">整车贴膜价位</view>
+                    <view class="flex color-de">{{searchList&&searchList.allFilm}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">前保险杠</view>
+                    <view class="flex color-de">{{searchList&&searchList.frontGuard}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">车顶</view>
+                    <view class="flex color-de">{{searchList&&searchList.carRoof}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">反光镜</view>
+                    <view class="flex color-de">{{searchList&&searchList.retroreflector}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">后盖+车尾</view>
+                    <view class="flex color-de">{{searchList&&searchList.postoperculumTrail}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">引擎盖</view>
+                    <view class="flex color-de">{{searchList&&searchList.bonnet}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">两个侧裙</view>
+                    <view class="flex color-de">{{searchList&&searchList.twoSideSkirt}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">单个后叶子板</view>
+                    <view class="flex color-de">{{searchList&&searchList.olLappet}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">左后叶子板+左侧两个门</view>
+                    <view class="flex color-de">{{searchList&&searchList.llLappetLtDoor}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">后保险杠</view>
+                    <view class="flex color-de">{{searchList&&searchList.tailBumper}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">左右两个前叶子板</view>
+                    <view class="flex color-de">{{searchList&&searchList.lrtfLappet}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">引擎盖+叶子板+反光镜</view>
+                    <view class="flex color-de">{{searchList&&searchList.bonnetLappetRet}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">单门</view>
+                    <view class="flex color-de">{{searchList&&searchList.oneDoor}}元</view>
+                  </view>
+                  <!--  -->
+                  <view class="proBox-con">
+                    <view class="pr10">右后叶子板右侧两个门</view>
+                    <view class="flex color-de">{{searchList&&searchList.llLappetRtDoor}}元</view>
+                  </view>
+                  <!--  -->
                 </view>
-              </view>
+
+                <view class="flex-Jc p20" wx:if="{{!showData}}">
+                  暂无数据
+                </view>
               <!--  -->
             </scroll-view>
           </swiper-item>
+          
           <swiper-item class='swiper' class='swiper'>
-            
-          </swiper-item>
-          <swiper-item class='swiper' class='swiper'>
-          <view class='name'>
+          <scroll-view scroll-y style='height:{{height}}px'>
             <view class='zhibaoBox'>
-              <view class='zhibao-f'>
-               <input type='number' name="usertel" value='' placeholder='请输入查询的手机号' />
+              <view class='zhibao-f flex'>
+               <input type='number' name="usertel" value='{{}}' bindinput="inputChange" placeholder='请输入查询的手机号' />
               </view>
-              <view class="chaxun">查询</view>
+              <view class="chaxun" bindtap="searchZbFun">查询</view>
             </view>
             <!--  -->
-            <view class="zhibg">
-
+            <view class="zhibg" style='height:200px'>
+                <view wx:if="{{showZbData}}" class="flex-Jc p20">
+                  质保单号：{{zbSearch&&zbSearch.carNumber}}
+                </view>
+                <view class="flex-Jc p20" wx:if="{{!showZbData}}">
+                  暂无数据
+                </view>
             </view>
-          </view>
-            <view wx:for="{{thirdList}}" wx:for-item="item" class='record-item'>
-            <view class='name'>
-            
-            </view>
-            </view>
+            </scroll-view>
           </swiper-item>
         </swiper>
 </view>

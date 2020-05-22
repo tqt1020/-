@@ -1,11 +1,11 @@
 <!--index.wxml-->
-<view class="container">
+<scroll-view scroll-y class="container">
   <!-- 轮播 -->
   <view class='carousel'> 
-  <swiper class='carousel_swiper' indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#4eb8b8" autoplay="true" interval='2000' circular='true'>
-    <block wx:for="{{carouselList}}" wx:key="key">
-      <swiper-item bindtap='chomeCarouselClick' data-url='{{item.url}}'>
-        <image class="carouselImg" src='{{host}}{{item.img}}' mode='aspectFill' ></image>
+  <swiper class='carousel_swiper' indicator-dots="true" indicator-color="#f4f4f4" indicator-active-color="#fff" autoplay="true" interval='2000' circular='true'>
+    <block wx:for="{{carouselList}}" wx:for-index="index" wx:for-item="item">
+      <swiper-item>
+        <image class="carouselImg" src='{{item.bannerUrl}}' mode='aspectFill' ></image>
       </swiper-item>
     </block>
   </swiper>
@@ -14,31 +14,42 @@
  <!-- two -->
 <view class="titlePic">
   <view class="title-pic">
-    <view class="flex-item"></view>
-    <view class="flex-item"></view>
-    <view class="flex-item"></view>
-    <view class="flex-item"></view>
-    <view class="flex-item"></view>
+    <view class="flex-item" wx:for="{{categoryList}}" wx:for-index="index" wx:for-item="item"  data-id="{{item.productCenterId}}" bindtap="toDetailFun">
+      <view>
+       <image class="product-img" src="{{item.productImg}}"></image>
+      </view>
+      <text class="productText">{{item.productName}}</text>
+    </view>
   </view>
-  <view class='titleTxt'>
-    <text>SG Louis</text>
-    <text>SG Mat</text>
-    <text>SGP Louis</text>
-    <text>SGP Colbert</text>
-    <text>SGP Mat</text>
-  </view> 
   <view class="titleMore">
-    <text>更多>></text>
+    <view bindtap="toProductFun">更多>></view>
   </view>
 </view>
 
 <!-- three -->
-<view class="bgBox"></view>
+<view class="bgBox flex-Jc flex-rr">
+  <image class="flex-img" src="../../images/td-1.png"></image>
+  <view class="flex-Jc">
+    <view class="achievement">
+      <image src="../../images/icon-X.png" class="iconImg"></image>
+      <text style="color:#fff">团队介绍</text>
+      <image src="../../images/icon-X.png" class="iconImg"></image>
+    </view>
+  </view>
+  <view class="achievement1" style="color:#fff"><text>Group Introduction</text></view>
+  <view class="shengbiText">
+    <text style="padding-left:40rpx;color:#DEBF76;">总部</text>
+    <text style="font-size:24rpx;color:#fff;">设在法国的圣戈班集团为未来房屋开发新的高新技术材料和服务,是全球舒适居住环境方案的世界领导者。</text>
+    <view class="teamText">目前集团涉及三大业务单元,分别是创新材料，建筑产品，建材分销，且是其所在行业欧洲及世界的领导者。</view>
+  </view>
+</view>
 
 <!-- four -->
-<view class="textBox">
+<view class="textBox flex-Jc">
   <view class="achievement">
+   <image src="../../images/icon-X.png" class="iconImg"></image>
     <text>主要成就</text>
+     <image src="../../images/icon-X.png" class="iconImg"></image>
   </view>
   <view class="achievement1">
     <text>Major Achievements</text>
@@ -66,13 +77,44 @@
 </view>
 <!-- 技术创新 -->
 <view class="jishuBox">
-  <view class="achievement"><text>技术创新</text></view>
+    <view class="flex-Jc">
+      <view class="achievement">
+        <image src="../../images/icon-X.png" class="iconImg"></image>
+        <text>技术创新</text>
+        <image src="../../images/icon-X.png" class="iconImg"></image>
+      </view>
+    </view>
   <view class="achievement1"><text>Technological Innovation</text></view>
-  <view class="yuanBox"></view>
+  <view class="yuanBox">
+    <view class="yuan-fr">
+      <view class="fr-right f11">
+        <text class="fr-text">创新力企业：全球100家之一 </text>
+        <!-- <text class="fr-text">全球100家之一</text> -->
+      </view>
+      <view class="fr-right f121">
+        <text class="fr-text">2016年注册近300项专利</text>
+        <!-- <text class="fr-text">近300项专利</text> -->
+      </view>
+    </view>
+    <view class="yuan-ft">
+      <view class="fr-left f13">
+        <text class="fr-text">近100个开发机构3700名研发人员</text>
+      </view>
+      <view class="fr-left f14">
+        <text class="fr-text">产品更新速度快，其中1/4在售产品5年前是不存在的 </text>
+      </view>
+    </view>
+  </view>
 </view>
 <!-- 在中国 -->
 <view class="shengbiBox">
-  <view class="achievement"><text>圣戈班在中国</text></view>
+    <view class="flex-Jc">
+      <view class="achievement">
+        <image src="../../images/icon-X.png" class="iconImg"></image>
+        <text>圣戈班在中国</text>
+        <image src="../../images/icon-X.png" class="iconImg"></image>
+      </view>
+    </view>
   <view class="achievement1"><text>Saint-Gobain in chaina</text></view>
   <view class="shengbiText">
     <text style="padding-left:40rpx;color:#000;">圣戈班集团</text>
@@ -81,7 +123,13 @@
 </view> 
 <!-- 里程碑 -->
 <view class="licBox">
-  <view class="achievement"><text>里程碑</text></view>
+    <view class="flex-Jc">
+      <view class="achievement">
+        <image src="../../images/icon-X.png" class="iconImg"></image>
+        <text>里程碑</text>
+        <image src="../../images/icon-X.png" class="iconImg"></image>
+      </view>
+    </view>
   <view class="achievement1"><text>Milestones</text></view>
   <view class="licText">
     <text style="">在过去四十多年里，舒热佳（Solar Gard），畅销全球90多个国家和地区，在全球拥有20多个分销中心，5000多家安装商覆盖60多个国家和地区。</text>
@@ -140,8 +188,6 @@
 </view>
 <!-- 选项卡 -->
   <view class="xinwenBox">
-      <scroll-view scroll-y bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"
-        scroll-top="{{scrollTop}}">
         <!--Tab布局-->
         <view class='title'>
           <view class="title-sel {{0 == currentIndex ? 'title-sel-selected' : ''}}" bindtap='titleClick' data-idx='0'>
@@ -155,56 +201,74 @@
             <text>新闻中心</text>
           </view>
         </view>
-      </scroll-view>
       <!--内容布局-->
-        <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}'>
+        <swiper class='swiper' bindchange='pagechange' current='{{currentIndex}}' style="height:100%">
           <swiper-item class='swiper'>
-          <view class='name'>
-            <view class="name-Box">
-              <view class="achievement"><text>圣戈班在中国</text></view>
-              <view class="achievement1"><text>Saint-Gobain in chaina</text></view>
-              <view class="nameText">
-                <text style="padding-left:40rpx;color:#000;">圣戈班集团</text>
-                <text style="font-size:24rpx;color:#333;">自1985年进入中国市场,至今在华已设立1家研发中心和40多家企业及公司,涉及汽车玻璃,建筑玻璃,以及磨料工具,陶瓷是大法师打发斯蒂芬</text>
-              </view>
-            </view>
-          </view>
-          <view wx:for="{{firstList}}" wx:for-item="item" class='record-item'>
-            <view class='name'>
-              1
-            </view>
-          </view>
+            
+                <view class='name'>
+                    <view class="name-Box">
+                        <view class="flex-Jc">
+                            <view class="achievement">
+                              <image src="../../images/icon-X.png" class="iconImg"></image>
+                              <text>圣戈班在中国</text>
+                              <image src="../../images/icon-X.png" class="iconImg"></image>
+                            </view>
+                       </view>
+
+                      <view class="achievement1"><text>Saint-Gobain in chaina</text></view>
+                      <view class="nameText">
+                        <text style="padding-left:40rpx;color:#000;">圣戈班集团</text>
+                        <text style="font-size:24rpx;color:#333;">自1985年进入中国市场,至今在华已设立1家研发中心和40多家企业及公司,涉及汽车玻璃,建筑玻璃,以及磨料工具,陶瓷是大法师打发斯蒂芬</text>
+                      </view>
+                    </view>
+                </view>
+            
+          
           </swiper-item>
           <swiper-item class='swiper' class='swiper'>
+          <scroll-view scroll-y>
             <view class='name'>
               <view class="name-Box">
-                <view class="achievement"><text>关于上海索洛盖德</text></view>
+                        <view class="flex-Jc">
+                            <view class="achievement">
+                              <image src="../../images/icon-X.png" class="iconImg"></image>
+                              <text>关于上海索洛盖德</text>
+                              <image src="../../images/icon-X.png" class="iconImg"></image>
+                            </view>
+                       </view>
                 <view class="achievement1"><text>SAbout sologaid in Shanghai</text></view>
                 <view class="namePic">
-                  
+                  <view class="flex-fs pro-box1">
+                    <view class="">
+                      <image class="company-img" src="../../images/bg-2.png"></image>
+                    </view>
+                  </view>
+                  <view>
+                    <text class="Pic-text"><text class="color-de f20">上海索洛盖德</text>科技有限公司是一家 经营世界500强圣戈班旗下Solar Gard 品牌中国区总运营。经营漆面膜、窗膜、 安全膜、建筑膜、玻璃盾全产品线、全渠道用专业体现价值，用品质赢得客户。 </text>
+                  </view>
                 </view>
               </view>
             </view>
-            <view wx:for="{{secondList}}" wx:for-item="item" class='record-item'>
-              <view class='name'>
-                
-              </view>
-            </view>
+          </scroll-view>
+            
+        
           </swiper-item>
           <swiper-item class='swiper' class='swiper'>
+           <scroll-view scroll-y>
+          </scroll-view>
           <view class='name'>
             <view class="newsBox">
-               <view class="flex-fs pro-box">
+               <view class="flex-fs pro-box" wx:for="{{newsList}}" wx:for-index="index" wx:for-item="item" data-id="{{item.airtileId}}" bindtap="toNewsDetailFun">
                   <view class="proRight">
-                    <image class="product-img" src="../../images/cp-1.png"></image>
+                    <image class="news-img" src="{{item.thum}}"></image>
                   </view>
                   <view class="flex pl10">
-                    <text class="flex pro-title">SG Louis</text>
+                    <text class="flex pro-title">{{item.title}}</text>
                     <view class="flex-fs pb10">
-                      <text class="color-9 f12"><icon></icon>123</text>
+                      <text class="color-9 f12"><icon></icon>{{item.readingQuantity}}</text>
                       <text class="color-9 f12 pl10"><icon></icon>123</text>
                     </view>
-                  <view class="color-9 f12">2020-01-02</view> 
+                  <view class="color-9 f12">{{item.createTime}}</view> 
                 </view>
               </view>
             </view>
@@ -217,4 +281,4 @@
         </swiper-item>
       </swiper>
   </view>
-</view>
+</scroll-view>

@@ -1,33 +1,29 @@
 <!--pages/product/product.wxml-->
-<view class="pt10">
-  <view class="proBox">
-    <view class="flex-fs pro-box">
-      <view class="proRight">
-        <image class="product-img" src="../../images/cp-1.png"></image>
-      </view>
-      <view class="flex pl10">
-        <text class="flex pro-title">SG Louis</text>
-        <view class="flex-fs pb10">
-          <text class="color-9 f12"><icon></icon>123</text>
-          <text class="color-9 f12 pl10"><icon></icon>123</text>
+<scroll-view scroll-y>
+  <view class="pt10">
+    <view class="proBox" wx:if="{{newGoods &&newGoods.length>0}}">
+      <view class="flex-fs pro-box text-over" wx:for="{{newGoods}}" wx:for-index="index" wx:for-item="item" data-id="{{item.productCenterId}}" bindtap="toDetailFun">
+        <view class="proRight">
+          <image class="product-img" src="{{item.productImg}}"></image>
         </view>
-        <view class="color-9 f12">2020-01-02</view> 
-      </view>
-    </view>
-    
-     <view class="flex-fs pro-box">
-      <view class="proRight">
-        <image class="product-img" src="../../images/cp-1.png"></image>
-      </view>
-      <view class="flex pl10">
-        <text class="flex pro-title">SG Louis</text>
-        <view class="flex-fs pb10">
-          <text class="color-9 f12"><icon></icon>123</text>
-          <text class="color-9 f12 pl10"><icon></icon>123</text>
+        <view class="flex pl10 text-over">
+          <text class="flex pro-title">{{item.productName}}</text>
+          <!-- <view class="flex-fs pb10">
+            <text class="color-9 f12"><icon></icon>123</text>
+            <text class="color-9 f12 pl10"><icon></icon>123</text>
+          </view> -->
+          <view class="color-9 f12 text-over pt10">{{item.productUse}}</view> 
         </view>
-        <view class="color-9 f12">2020-01-02</view> 
       </view>
+      
     </view>
+    <view class="noData" wx:if="{{newGoods.length == 0}}">暂无数据</view>
   </view>
-</view>
+</scroll-view>
 
+<!--  -->
+ <view class="weui-loadmore" hidden="{{hidden}}">
+    <view class="weui-loading"></view>
+    <view class="weui-loadmore__tips">努力加载中</view>
+ </view> 
+ <!--  -->

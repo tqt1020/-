@@ -2,60 +2,121 @@
 <!--pages/service/service.wxml-->
 <view class="xinwenBox">
   <view class="p12 fixed-t">
-     <!--Tab布局-->
+      <!--Tab布局-->
       <view class='title'>
         <view class="title-sel {{currentIndex==0 ? 'title-sel-selected' : ''}}" bindtap='swichNav' data-current='0'>
           <text>品牌介绍</text>
         </view> 
-        <view class="title-sel {{currentIndex==1 ? 'title-sel-selected' : ''}}" bindtap='swichNav' data-current='1'>
+        <!-- <view class="title-sel {{currentIndex==1 ? 'title-sel-selected' : ''}}" bindtap='swichNav' data-current='1'>
           <text>案例赏析</text>
-        </view>
-        <view class="title-sel {{currentIndex==2 ? 'title-sel-selected' : ''}}" bindtap='swichNav' data-current='2'>
+        </view> -->
+        <view class="title-sel {{currentIndex==1 ? 'title-sel-selected' : ''}}" bindtap='swichNav' data-current='1'>
           <text>联系我们</text>
         </view>
       </view>
   </view>
      
-      <!--内容布局-->
-        <swiper class='swiper' duration="200" bindchange="swiperChange" current='{{currentIndex}}' style='height:{{height}}px'>
-          <swiper-item class='swiper'>
-            <scroll-view scroll-y style='height:{{height-54}}px'>
-              <view class="bgBox">
-                <image src="" class="img"></image>
+      <!--展示布局-->
+      <swiper class='swiper' duration="200" bindchange="swiperChange" current='{{currentIndex}}' style='height:{{height}}px'>
+        <swiper-item class='swiper'>
+          <scroll-view scroll-y style='height:{{height-54}}px'>
+            <!-- 团队介绍 -->
+            <view class="bgBox flex-Jc flex-rr">
+            <image class="flex-img" src="../../images/td-1.png"></image>
+              <view class="flex-Jc">
+                <view class="achievement">
+                  <image src="../../images/icon-X.png" class="iconImg"></image>
+                  <text style="color:#fff">团队介绍</text>
+                  <image src="../../images/icon-X.png" class="iconImg"></image>
+                </view>
               </view>
-              <!-- 主要成就 -->
-              <view class="textBox">
-                <view class="achievement"><text>主要成就</text></view>
-                <view class="achievement1"><text>Major Achievements</text></view>
+              <view class="achievement1" style="color:#fff"><text>Group Introduction</text></view>
+              <view class="shengbiText">
+                <text style="padding-left:40rpx;color:#DEBF76;">总部</text>
+                <text style="font-size:24rpx;color:#fff;">设在法国的圣戈班集团为未来房屋开发新的高新技术材料和服务,是全球舒适居住环境方案的世界领导者。
+                </text>
+                <view class="teamText">目前集团涉及三大业务单元,分别是创新材料，建筑产品，建材分销，且是其所在行业欧洲及世界的领导者。
+                </view>
+              </view>
+            </view>
+            <!-- 主要成就 -->
+            <view class="textBox">
+              <view class="flex-Jc">
+                <view class="achievement">
+                  <image src="../../images/icon-X.png" class="iconImg"></image>
+                  <text>主要成就</text>
+                  <image src="../../images/icon-X.png" class="iconImg"></image>
+                  </view>
+                </view>
+              <view class="achievement1"><text>Major Achievements</text></view>
                 <view class="textitem"><view class="textRt">01</view>
-                <view class="texttfl">汽车安全玻璃：<text style="color:#DEBF76">欧洲50%轿车欧洲排名第一</text></view>
+                <view class="texttfl">汽车安全玻璃：
+                  <text style="color:#DEBF76">欧洲50%轿车欧洲排名第一</text>
+                </view>
               </view>
               <view class="textitem">
                 <view class="textRt">02</view>
-                <view class="texttfl">法国卢浮宫前金字塔：<text style="color:#DEBF76">共660块形状各异的玻璃</text></view>
+                <view class="texttfl">法国卢浮宫前金字塔：
+                  <text style="color:#DEBF76">共660块形状各异的玻璃</text>
+                </view>
               </view>
               <view class="textitem">
                 <view class="textRt">03</view>
-                <view class="texttfl">房屋隔音保护材料：<text style="color:#DEBF76;">欧洲1/3,美国1/5</text></view>
+                <view class="texttfl">房屋隔音保护材料：
+                  <text style="color:#DEBF76;">欧洲1/3,美国1/5</text>
+                </view>
               </view>
               <view class="textitem">
                 <view class="textRt">04</view>
-                <view class="texttfl">饮配水管道系统：<text style="color:#DEBF76">全球80多个首都,1000多个城市</text></view>
+                <view class="texttfl">饮配水管道系统：
+                  <text style="color:#DEBF76">全球80多个首都,1000多个城市</text>
+                </view>
               </view>
               <view class="textitem">
                 <view class="textRt">05</view>
-                <view class="texttfl">航空配件：<text style="color:#DEBF76">航飞机雷达罩, 驾驶舱玻璃 ,乘客舱玻</text></view>
+                <view class="texttfl">航空配件：
+                  <text style="color:#DEBF76">航飞机雷达罩, 驾驶舱玻璃 ,乘客舱玻</text>
+                </view>
               </view>
             </view>
             <!-- 技术创新 -->
             <view class="jishuBox">
-              <view class="achievement"><text>技术创新</text></view>
+              <view class="flex-Jc">
+                <view class="achievement">
+                  <image src="../../images/icon-X.png" class="iconImg"></image>
+                  <text>技术创新</text>
+                  <image src="../../images/icon-X.png" class="iconImg"></image>
+                </view>
+              </view>
               <view class="achievement1"><text>Technological Innovation</text></view>
-              <view class="yuanBox"></view>
+              <view class="yuanBox">
+                <view class="yuan-fr">
+                  <view class="fr-right f11">
+                    <text class="fr-text">创新力企业：全球100家之一 </text>
+                  </view>
+                  <view class="fr-right f12">
+                    <text class="fr-text">2016年注册近300项专利</text>
+                  </view>
+                </view>
+                <view class="yuan-ft">
+                  <view class="fr-left f13">
+                    <text class="fr-text">近100个开发机 构3700名研发人员</text>
+                  </view>
+                  <view class="fr-left f14">
+                    <text class="fr-text">产品更新速度 快，其中1/4在售产品5年前是不存在的 </text>
+                  </view>
+                </view>
+              </view>
             </view>
             <!-- 在中国 -->
             <view class="shengbiBox">
-              <view class="achievement"><text>圣戈班在中国</text></view>
+                <view class="flex-Jc">
+                  <view class="achievement">
+                    <image src="../../images/icon-X.png" class="iconImg"></image>
+                    <text>圣戈班在中国</text>
+                    <image src="../../images/icon-X.png" class="iconImg"></image>
+                  </view>
+                </view>
               <view class="achievement1"><text>Saint-Gobain in chaina</text></view>
               <view class="shengbiText">
                 <text style="padding-left:40rpx;color:#000;">圣戈班集团</text>
@@ -65,7 +126,13 @@
             </view> 
             <!-- 里程碑 -->
             <view class="licBox">
-              <view class="achievement"><text>里程碑</text></view>
+                <view class="flex-Jc">
+                  <view class="achievement">
+                    <image src="../../images/icon-X.png" class="iconImg"></image>
+                    <text>里程碑</text>
+                    <image src="../../images/icon-X.png" class="iconImg"></image>
+                  </view>
+                </view>
               <view class="achievement1"><text>Milestones</text></view>
               <view class="licText">
                 <text style="">在过去四十多年里，舒热佳（Solar Gard），畅销全球90多个国家和地区，在全球拥有20多个分销中心，5000多家安装商覆盖60多个国家和地区。</text>
@@ -124,69 +191,32 @@
 </view>
           </scroll-view>
         </swiper-item>
+       
         <swiper-item class='swiper' class='swiper'>
-          <view class='name'>
-           <view class="pt10">
-  <view class="proBox">
-    <view class="flex-fs pro-box">
-      <view class="proRight">
-        <image class="product-img" src="../../images/cp-1.png"></image>
-      </view>
-      <view class="flex pl10">
-        <text class="flex pro-title">SG Louis</text>
-        <view class="flex-fs pb10">
-          <text class="color-9 f12"><icon></icon>123</text>
-          <text class="color-9 f12 pl10"><icon></icon>123</text>
-        </view>
-        <view class="color-9 f12">2020-01-02</view> 
-      </view>
-    </view>
-    
-     <view class="flex-fs pro-box">
-      <view class="proRight">
-        <image class="product-img" src="../../images/cp-1.png"></image>
-      </view>
-      <view class="flex pl10">
-        <text class="flex pro-title">SG Louis</text>
-        <view class="flex-fs pb10">
-          <text class="color-9 f12"><icon></icon>123</text>
-          <text class="color-9 f12 pl10"><icon></icon>123</text>
-        </view>
-        <view class="color-9 f12">2020-01-02</view> 
-      </view>
-    </view>
-  </view>
-</view>
-          </view>
-          <view wx:for="{{secondList}}" wx:for-item="item" class='record-item'>
-            <view class='name'></view>
-          </view>
-        </swiper-item>
-        <swiper-item class='swiper' class='swiper'>
-          <view class='name'>
+          <view class='name' style="height: 451px;overflow: auto;">
             <!-- 地图 -->       
             <view class="map_container">
-              <!-- <map class='map' longitude='{{longitude}}' latitude='{{latitude}}' scale='{{scale}}' markers='{{markers}}' controls="{{controls}}" bindcontroltap="bindcontroltap" polyline='{{polyline}}' circles="{{circles}}" bindmarkertap='bindmarkertap' bindcontroltap='bindcontroltap'
-    show-location></map> -->
-    <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%;"></map>
+              <map id="map" longitude="113.324520" latitude="23.099994" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%;">
+              </map>
             </view>
             <!-- 提交 -->
             <form bindsubmit="formSubmit">
               <view class="formBox">
                 <view class="form-flex"><text style="color:red">*</text>姓名：
-                  <input type='text' name="username" value='' placeholder='' />
+                  <input type='text' name="username" value='{{username}}'  placeholder='' />
                 </view>
               </view>
                <view class="formBox">
                 <view class="form-flex"><text style="color:red">*</text>电话：
-                  <input type='number' name="usertel" value='' placeholder='' />
+                  <input type='number' name="usertel" value='{{usertel}}'  placeholder='' maxlength="11" />
                 </view>
               </view>
+              <view class="formBox">
+                <textarea id="message" name="message" value="{{message}}" placeholder="请输入备注：" style="padding:20rpx"></textarea>
+              </view>
               <button class="btn-tijiao" formType="submit">提交</button>
+              
             </form>
-          </view>
-          <view wx:for="{{thirdList}}" wx:for-item="item" class='record-item'>
-          <view class='name'></view>
           </view>
           </swiper-item>
         </swiper>

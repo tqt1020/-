@@ -1,0 +1,13 @@
+<view class="details-head">
+  <image src="{{dataInfo&&dataInfo.productImg}}" class="photo"></image>
+</view>
+<!--  -->
+<view class="details-con">
+  <view class="details-title">
+{{dataInfo&&dataInfo.productName}}
+  </view>
+  <view class="tag">
+  {{dataInfo&&dataInfo.productUse}}
+  </view>
+  <!--  -->
+</view>

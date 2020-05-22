@@ -1,6 +1,7 @@
 //index.js
 const app = getApp()
-
+const ajax = require('../../utils/ajax.js');
+var page = 1
 Page({
   data: {
     avatarUrl: './user-unlogin.png',
@@ -9,62 +10,35 @@ Page({
     takeSession: false,
     requestResult: '',
     host: getApp().globalData.baseUrl,
-    carouselList: [
-      '',
-      '',
-      ''
-    ],
-    currentIndex:0
+    carouselList: null,
+    currentIndex:0,
+    type:'1',
+    currentPage:'1',
+    pageSize:'2',
+    categoryList:[],
+    newsList:[]
   },
 
   onLoad: function() {
-    if (!wx.cloud) {
-      wx.redirectTo({
-        url: '../chooseLib/chooseLib',
-      })
-      return
-      this.requestCarouselListData();//请求轮播图
-    }
-    
-
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                avatarUrl: res.userInfo.avatarUrl,
-                userInfo: res.userInfo
-              })
-            }
-          })
-        }
-      }
-    })
+    var that = this;
+    that.requestCarouselListData();//请求轮播图
+    that.requestNewscenterData();//请求新闻中心
+    that.requestMastproductData();//请求核心产品图
   },
   //请求轮播图
   requestCarouselListData() {
     var that = this;//注意this指向性问题
-    // var urlStr = that.data.host + "/xjj/chome_carousel_list.json"; //请求连接注意替换（我用本地服务器模拟）
-    console.log("请求轮播图：" + urlStr);
-    wx.request({
-      url: urlStr,
-      data: {//这里放请求参数，如果传入参数值不是String，会被转换成String 
-        // x: '',
-        // y: ''
-      },
-      header: {
-        'content-type': 'application/json' // 默认值
-      },
-      success(res) {
-        console.log("轮播图返回值：");
-        console.log(res.data.result);
-        var resultArr = res.data.result;
+    ajax.request({
+      method: 'POST',
+      url: "/api/banner/selectAll",
+      data: null,
+      success: res => {
         that.setData({
-          carouselList: resultArr
+          carouselList: res
         })
+      }, fail: function (res) {
+        wx.hideLoading()
+        console.log(res)
       }
     })
   },
@@ -76,26 +50,76 @@ Page({
     //   url: 'test?id=1'
     // })
   },
+  //核心产品图
+  requestMastproductData(){
+    var that = this;
+    ajax.request({
+      method: 'GET',
+      url: '/api/productcenter/queryProductCenterForHome',
+      success: res => {
+        console.log(res)
+        that.setData({
+          categoryList: res
+        })
+      }, fail: function (res) {
+        wx.hideLoading()
+        console.log(res)
+      }
+    })
+  },
+  //请求新闻中
+  requestNewscenterData(){
+    var that = this;
+    ajax.request({
+      method: 'POST',
+      url: "/api/airtle/queryAirtleList?type=" + that.data.type + '&currentPage=' + that.data.currentPage + '&pageSize=' + that.data.pageSize,
+      success: res => {
+        //console.log(res)
+        that.setData({
+          newsList: res.list
+        })
+      }, fail: function (res) {
+        wx.hideLoading()
+        console.log(res)
+      }
+    })
+  },
   //swiper切换时会调用
   pagechange: function (e) {
-    if ("touch" === e.detail.source) {
-      let currentPageIndex = this.data.currentIndex
-      currentPageIndex = (currentPageIndex + 1) % 3
-      this.setData({
-        currentIndex: currentPageIndex
-      })
-    }
+    this.setData({
+      currentIndex: e.detail.current,
+    })
   },
   //用户点击tab时调用
   titleClick: function (e) {
-    let currentPageIndex =
-      this.setData({
-        //拿到当前索引并动态改变
-        currentIndex: e.currentTarget.dataset.idx
+    console.log(e);
+    var that = this;
+    if (this.data.currentIndex === e.currentTarget.dataset.idx) {
+      return false;
+    } else {
+      that.setData({
+        currentIndex: e.currentTarget.dataset.idx,
       })
+    }
   },
-
-
+  toDetailFun(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../details/details?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  toNewsDetailFun(e) {
+    console.log(e)
+    wx.navigateTo({
+      url: '../news/news?id=' + e.currentTarget.dataset.id,
+    })
+  },
+  toProductFun(e) {
+    console.log(e)
+    wx.switchTab({
+      url: '../product/product'
+    })
+  },
 
 
 
